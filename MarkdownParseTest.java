@@ -50,4 +50,9 @@ public class MarkdownParseTest {
         ArrayList<String> links = MarkdownParse.getLinks(contents);
         assertEquals(0, links.size()); // empty file
     }
+
+    @Test
+    public void testSnippet1() throws IOException {
+        
+    }
 }
