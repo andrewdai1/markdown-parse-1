@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MarkdownParseTest {
     @Test
@@ -53,6 +54,11 @@ public class MarkdownParseTest {
 
     @Test
     public void testSnippet1() throws IOException {
-        
+        Path fileName = Path.of("snippet-1.md");
+	    String contents = Files.readString(fileName);
+        List<String> links = MarkdownParse.getLinks(contents);
+        List<String> expected = List.of("`google.com","google.com", "ucsd.edu");
+        assertEquals(expected, links);
     }
+    
 }
